@@ -14,7 +14,7 @@
     background: #13293d;
     color: white;
     grid-area: header-area;
-    height: 40vh;
+    height: 50vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,7 +26,7 @@
 
 .nav {
     grid-area: nav-area;
-    height: 5vh;
+    height: 50vh;
     background-color: #333;
 }
 
@@ -46,6 +46,7 @@
 
 .navmenu {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     list-style-type: none;
@@ -77,13 +78,12 @@
     justify-content: center;
     align-items: center;
     background-color: #692d55;
-    font-size: 11px;
     min-height: 20vh;
     color: #ffffff;
 }
 
 .adress {
-    grid-column: 6 / 7;
+    grid-column: 1 / 7;
     font-size: 1rem;
     text-align: center;
     font-family: 'Playfair Display', serif;
@@ -91,15 +91,15 @@
 }
 
 .e-info {
-    grid-column: 5 / 6;
+    grid-column: 1 / 7;
     font-size: 1rem;
     text-align: center;
     font-family: 'Playfair Display', serif;
 }
 
 .box {
-    width: 600px;
-    height: 500px;
+    width: 100vw;
+    height: 250px;
     margin: 10px;
     background-color: lightgrey;
     display: flex;
@@ -110,8 +110,8 @@
 }
 
 .imgbox {
-    width: 600px;
-    height: 500px;
+    width: 95vw;
+    height: 250px;
     margin: 10px;
     background-color: lightgrey;
     display: flex;
@@ -128,40 +128,31 @@
 
 .titlebox {
     width: 100vw;
-    height: 300px;
+    max-height: 300px;
+    min-height: 250px;
     background-color: #f2f2f2;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    margin: 10px;
 }
 
 .boxtext {
     font-family: 'Playfair Display', serif;
-    font-size: 2rem;
+    font-size: 1rem;
     margin: 30px;
 }
 
-.about1,
-.about2,
-.about3 {
-    display: flex;
-    flex-wrap: wrap;
-    text-align: left;
-    font-size: 1rem;
-    padding: 55px;
-    font-family: 'Playfair Display', serif;
-}
 
 .pricings {
     display: flex;
     flex-direction: column;
     font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
+    font-size: 1rem;
     text-align: left;
-    padding: 10px;
-    width: 300px;
-    height: 400px;
+    width: 100vw;
+    height: 300px;
 }
 
 .button {
@@ -178,23 +169,34 @@
     align-items: center;
 }
 
+.about1,
+.about2,
+.about3 {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: left;
+    font-size: 1rem;
+    padding: 55px;
+    font-family: 'Playfair Display', serif;
+    padding: 10px;
+    width: 100vw;
+}
+
 .about1 {
-    order: 3;
-    width: 50%;
+    order: 2;
 }
 
 .about2 {
     order: 3;
-    width: 95vw;
     font-style: italic;
     align-items: center;
+    text-align: center;
     justify-content: center;
     background-color: #f2f2f2;
 }
 
 .about3 {
     order: 5;
-    width: 50%;
 }
 
 #flexorder-box1 {
@@ -209,61 +211,59 @@
     order: 6;
 }
 
-@media screen and (max-width: 460px) {
+@media screen and (min-width: 700px) {
     .navmenu {
         display: flex;
-        flex-direction: column;
-        justify-content: end;
+        flex-direction: row;
+        justify-content: space-evenly;
         margin: 0;
     }
     .nav {
-        height: 50vh;
+        height: 9vh;
     }
     .box {
-        width: 100vw;
-        height: 200px;
+        width: 30vw;
+        height: 50vh;
     }
     .imgbox {
-        width: 250px;
-        height: 200px;
+        width: 25vw;
+        height: 50vh;
     }
     .titlebox {
-        width: 100vw;
+        width: 90vw;
+        height: 10vh;
+    }
+
+    .boxtext {
         font-size: 1.5rem;
     }
+
     .header {
-        height: 20vh;
+        height: 40vh;
     }
-    .boxtext {
-        font-size: 1rem;
-    }
+    
     .adress {
-        grid-column: 1 / 7;
-        font-size: 1rem;
+        grid-column: 6 / 7;
+        font-size: 0.8rem;
         text-align: center;
     }
     .e-info {
-        grid-column: 1 / 7;
-        font-size: 1rem;
-        text-align: center;
+        grid-column: 5 / 6;
+        font-size: 0.8rem;
+        text-align: right;
     }
-    .about1,
-    .about2,
-    .about3 {
-        display: flex;
-        flex-wrap: wrap;
-        text-align: left;
-        padding: 5px;
-        width: 100vw;
-    }
+    
     .about1 {
         order: 2;
+        width: 50vw;
     }
     .about2 {
         order: 3;
+        width: 90vw;
     }
     .about3 {
-        order: 5;
+        order: 6;
+        width: 50vw;
     }
     #flexorder-box1 {
         order: 2;
@@ -272,11 +272,12 @@
         order: 2;
     }
     #flexorder-box3 {
-        order: 6;
+        order: 5;
     }
     .pricings {
         font-size: 1rem;
-        width: 100vw;
-        height: 50vh;
+        width: 16vw;
+        height: 45vh;
     }
 }
+
